@@ -1,0 +1,63 @@
+﻿<Window x:Class="FirstProject.Edit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstProject"
+        mc:Ignorable="d"
+        Title="Edit" Height="430.027" Width="839.948" Background="#FF8BD0FF">
+    <Grid Margin="25,-28,-85,-10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="155*"/>
+            <ColumnDefinition Width="627*"/>
+            <ColumnDefinition Width="110*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <Label Foreground="Black" Margin="5,41,46.7,360" Grid.RowSpan="2" FontFamily="Segoe UI Black" FontSize="16">Ad</Label>
+        <TextBox x:Name="txtSoyad" Margin="113,24,451,326" Grid.Row="1" Grid.ColumnSpan="2"></TextBox>
+        <Label Foreground="Black" Margin="5,24,39.7,318" Grid.Row="1" FontFamily="Segoe UI Black" FontSize="16">Soyad</Label>
+        <Label Foreground="Black" Margin="5,58,27.7,288" Grid.Row="1" FontFamily="Segoe UI Black" FontSize="16">Cinsiyet</Label>
+        <Label Foreground="Black" Margin="3,98,29.7,252" Grid.Row="1" FontFamily="Segoe UI Black" FontSize="16">Öğrenci No</Label>
+        <Label Foreground="Black" Margin="3,140,46.7,206" Grid.Row="1" FontFamily="Segoe UI Black" FontSize="16">Bölüm</Label>
+        <ComboBox Name="cmbBolum" Margin="113,136,451,210" Grid.Row="1" Grid.ColumnSpan="2">
+            <ComboBoxItem>Bilgisayar Programcılığı</ComboBoxItem>
+            <ComboBoxItem>Fizyoterapi</ComboBoxItem>
+            <ComboBoxItem>Dış Ticaret</ComboBoxItem>
+            <ComboBoxItem>Anestezi</ComboBoxItem>
+            <ComboBoxItem>Sivil Havacılık</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="cmbCinsiyet" Margin="113,58,451,288" Grid.Row="1" Grid.ColumnSpan="2">
+            <ComboBoxItem>Erkek</ComboBoxItem>
+            <ComboBoxItem>Kadın</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="txtAd" Margin="113,41,451,360" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtOgrenciNo" Margin="113,96,451,249" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnKaydet" Content="KAYDET" Margin="113,179,288,178" RenderTransformOrigin="0.5,0.5" Click="btnKaydet_Click" Grid.Row="1" Grid.ColumnSpan="2" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.184"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <DataGrid Name="tablo2" Height="186" Margin="181.3,41,95,0" Grid.Column="1" AutoGenerateColumns="False" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="2" Foreground="#FFFF002E" FontSize="18" FontFamily="Segoe UI Black">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Ad" Binding="{Binding Ad}"/>
+                <DataGridTextColumn Header="Soyad" Binding="{Binding Soyad}"/>
+                <DataGridTextColumn Header="Cinsiyet" Binding="{Binding Cinsiyet}" />
+                <DataGridTextColumn Header="Öğrenci No" Binding="{Binding OgrenciNo}" />
+                <DataGridTextColumn Header="Bölüm" Binding="{Binding Bolum}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox Name="cmbIndex" Margin="499.3,180,95,177" SelectionChanged="cmbIndex_SelectionChanged" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" >
+
+        </ComboBox>
+        <Label Content="Değer Seç" HorizontalAlignment="Left" Margin="364.3,182,0,0" Grid.Row="1" VerticalAlignment="Top" Width="118" Background="#FFFCFFDB" Grid.Column="1"/>
+        <Label Name="lblErrorMessage" Content="Hata Mesajı Burada Yer Alacak" HorizontalAlignment="Left" Margin="140,263,0,0" Grid.Row="1" VerticalAlignment="Top" Width="576" FontSize="36" Height="64" FontWeight="Bold" FontStyle="Italic" FontFamily="Segoe UI Black" Background="White" Foreground="#FFB90000" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
